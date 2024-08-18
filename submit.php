@@ -18,7 +18,7 @@ $email = $_POST['email'];
 $sql = "INSERT INTO submissions (name, email) VALUES ('$name', '$email')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New record created successfully you will get update soon";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
