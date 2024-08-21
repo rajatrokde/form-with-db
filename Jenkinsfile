@@ -12,8 +12,8 @@ pipeline {
             steps {
                 sshagent(['ec2-ssh-credentials-id']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ec2-user@your-ec2-ip-address '
-                        cd /path/to/your/app &&
+                        ssh -o StrictHostKeyChecking=no ubuntu@your-ec2-ip-address '
+                        cd /var/www/html &&
                         git pull origin main
                         '
                     '''
