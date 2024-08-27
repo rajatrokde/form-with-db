@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "form_user";
-$password = "password";
+$servername = "mysql-db.cdwesswkehpe.us-east-1.rds.amazonaws.com";
+$username = "admin123";
+$password = "admin123";
 $dbname = "simple_form";
 
 // Create connection
