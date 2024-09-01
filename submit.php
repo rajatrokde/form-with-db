@@ -2,7 +2,7 @@
 // Database credentials
 $servername = "localhost";
 $username = "root";  // Replace with your MySQL username
-$password = "";  // Replace with your MySQL password
+$password = "rajat";  // Replace with your MySQL password
 $dbname = "contact_form_db";
 
 // Create a connection
