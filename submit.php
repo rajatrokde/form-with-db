@@ -1,8 +1,8 @@
 <?php
-$servername = "mysql-db.cdwesswkehpe.us-east-1.rds.amazonaws.com";
-$username = "admin123";
-$password = "admin123";
-$dbname = "simple_form";
+$servername = "localhost";
+$username = "root";
+$password = "rajat";
+$dbname = "contact_form_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
