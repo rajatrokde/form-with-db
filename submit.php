@@ -1,27 +1,37 @@
 <?php
-$servername = "mysql-db.cdwesswkehpe.us-east-1.rds.amazonaws.com";
-$username = "admin123";
-$password = "admin123";
-$dbname = "simple_form";
+// Database credentials
+$servername = "localhost";
+$username = "root";  // Replace with your MySQL username
+$password = "";  // Replace with your MySQL password
+$dbname = "contact_form_db";
 
-// Create connection
+// Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$name = $_POST['name'];
-$email = $_POST['email'];
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize input data
+    $name = $conn->real_escape_string($_POST['name']);
+    $email = $conn->real_escape_string($_POST['email']);
+    $subject = $conn->real_escape_string($_POST['subject']);
+    $message = $conn->real_escape_string($_POST['message']);
 
-$sql = "INSERT INTO submissions (name, email) VALUES ('$name', '$email')";
+    // Insert data into the contacts table
+    $sql = "INSERT INTO contacts (name, email, subject, message) 
+            VALUES ('$name', '$email', '$subject', '$message')";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully you will get update soon";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
 }
 
+// Close the connection
 $conn->close();
 ?>
