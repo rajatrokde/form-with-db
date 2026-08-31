@@ -1,5 +1,5 @@
 # Use the official PHP image with Apache
-FROM php:7.4-apache
+FROM php:8.5.9-apache
 
 # Install MySQL and PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
